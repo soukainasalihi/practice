@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Jul 23 16:59:37 IST 2020
+jakarta.el-3.0.3-sources.jar>nexus=
+jakarta.el-3.0.3.jar>nexus=
+jakarta.el-3.0.3.pom>nexus=

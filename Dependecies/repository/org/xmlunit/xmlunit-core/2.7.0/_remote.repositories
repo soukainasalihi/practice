@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Jul 23 17:00:06 IST 2020
+xmlunit-core-2.7.0.jar>nexus=
+xmlunit-core-2.7.0.pom>nexus=
+xmlunit-core-2.7.0-sources.jar>nexus=

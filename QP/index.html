@@ -1,0 +1,942 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./css/styles.ec294d85b6bb1cdfb839.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <script src="./js/jquery.min.js" rel="text/javascript"></script>
+    <script src="./js/jquery-ui.min.js" rel="text/javascript"></script>
+    <script src="./js/bootstrap.js" rel="text/javascript"></script>
+</head>
+
+<body style="color:black">
+    <!-- <div style="position: relative" class="col-md-12"> -->
+    <nav class="uk-navbar-container uk-navbar fixed-top">
+        <div class="uk-navbar-left">
+            <img style="float:left;margin-top:8px;margin-left:15px;margin-right:15px;margin-bottom:8px" src="img/Asset 8.png" />
+
+            <a class="uk-margin-left-small uk-button uk-button-primary decpadding" href="#" id="welcome"
+                onclick="showWelcome()">
+                <span class="nav-text uk-visible@s">ASSESSMENT INSTRUCTIONS</span>
+            </a>
+            <a class="uk-margin-left-small uk-button uk-button-primary decpadding" href="#" id="instuctions"
+                onclick="showInstructions()">
+                <span class="nav-text uk-visible@s">PROJECT INSTRUCTIONS</span>
+            </a>
+            <a class="uk-button uk-button-primary decpadding" href="#" id="questions" onclick="showQuestions()">
+                <span class="nav-text uk-visible@s">PROBLEM STATEMENT</span>
+            </a>
+        </div>
+    </nav>
+<!-- </div> -->
+<br/><br/>
+
+    <div class="uk-container">
+
+        <!-- -----------------------------Assessment Instructions Tab ---------------------- -->
+        <div style="display:none" id="welcome_p">
+                <div
+                style="position: fixed; bottom:0; right:0; background-color: black; color: white; font-size: larger; padding: 5; border: 2px solid  white  ">
+                <a href="#top">Go to top</a></div>
+            <br />
+
+            <div>
+				<br>
+                <div align="center">
+                    <span class="heading" style="color:blue;font-size:1.5rem">
+						Developing Web API using Spring REST Mock Hands-On Assessment
+					</span>
+                </div>
+            </div>
+			<br/>
+			<p>
+				<span class="heading" style="color:blue">
+					Must read instuctions before you start your assessment
+				</span>
+			</p>
+            <ol>
+				<li>
+					You have been provided with an environment with the necessary software and tools for the assessment.
+				</li>
+				<br>
+				<li>
+					The project has been loaded into your environment. Execute the file "click-here" to complete the setup. In case you close this tab/browser, you can execute the file "instruction.sh" to reopen this page.
+				</li>
+				<br>
+				<li>
+					Two buttons, ‘Execute’ and ‘View Result’, are given in the environment. Click on ‘Execute’ when you want to test your solution and see the test report. <strong>You can also see the test analysis report on the desktop of VM.</strong> Click on ‘View Result’ to see the test report of the latest execution.
+				</li>
+				<br>
+				<li>
+					Once the assessment is completed/submitted, you cannot retrieve your code again.
+				</li>
+				<br>
+				<li>
+					You cannot copy the code to your system from the environment or vice-versa.
+				</li>
+				<br>
+				<li>
+					In case of any issues, you can reopen your environment by reopening the assessment in your browser provided you have time left.
+				</li>
+				<br>
+				<li>
+					Your result will be saved only when you finish the assessment or when your time expires. It will not be saved if the assessment is not opened in a browser when your time is up.
+				</li>
+			</ol>
+            
+            <br />
+            <br />
+            <div align="center">
+                <button onclick="showInstructions()" class="uk-button uk-button-primary uk-button-small">Next</button>
+            </div>
+        </div>
+		
+
+        <!-- ---------------------- Project Instructions Tab -------------------------------- -->
+
+        <div style="display:none" id="instuctions_p">
+			<div style="position: fixed; bottom:0; right:0; background-color: black; color: white; font-size: larger; padding: 5; border: 2px solid  white">
+				<a href="#top">Go to top</a>
+			</div>
+			<br />
+            <div>
+				<br>
+                <div align="center">
+                    <span class="heading" style="color:blue;font-size:1.5rem">
+						Developing Web API using Spring REST Mock Hands-On Assessment
+					</span>
+                </div>
+            </div>
+            <br>
+            <span class="heading" style="color:blue">Project Instructions:</span>
+			<br><br>
+			You will be provided with an implementation of code using Spring with boot. Please follow the below steps:
+			<br><br>
+            <ul>
+                <li>
+					For getting connected to MySQL database use the credentials as:
+					<ul>
+						<li>
+							username: root
+						</li>
+						<li>
+							password: &lt;&lt;empty string&gt;&gt;
+						</li>
+					</ul>
+                </li>
+				<br>
+                <li>
+					Database is already loaded with tables and data as per the SQL queries present in <strong>EventRegistration_TableScripts.sql</strong> file placed in <strong>src/main/resources</strong> folder
+
+                </li>
+				<br>
+                <li>
+					You need to run the project as <strong>Run As Java Application</strong> as it is boot project
+                </li>
+				<br>
+                <li>
+					You need to use <strong>Postman</strong> Tool for testing the REST end points
+				</li>                 
+            </ul>
+			<br>
+			After completing the above steps, implement the given requirements.
+			<br />
+            <br />
+            <div align="center">
+                <button class="uk-button uk-button-primary uk-button-small"
+                    onclick="showWelcome();">Prev</button>&nbsp;&nbsp;&nbsp;
+                <button onclick="showQuestions()" class="uk-button uk-button-primary uk-button-small">Next</button>
+            </div>
+            <br>
+        </div>
+
+
+        <!-- ---------------------- PROBLEM STATEMENT Tab -------------------------------- -->
+
+        <div style="display:none" id="questions_p">
+            <div style="position: fixed; bottom:0; right:0; background-color: black; color: white; font-size: larger; padding: 5; border: 2px solid  white">
+                <a href="#top">Go to top</a>
+			</div>
+			<br />
+            <div>
+				<br>
+                <div align="center">
+                    <span class="heading" style="color:blue;font-size:1.5rem">
+						Developing Web API using Spring REST Mock Hands-On Assessment
+					</span>
+                </div>
+            </div>
+			<br>
+            <span class="heading" style="color:blue">Problem Statement:</span>
+			<br><br>            
+			In this assessment, you are going to build an <strong>Event Registration</strong> application which can be used to register a participant to an event and view all the participants of a given venue. You will have to implement the following functionalities in the application,
+			<br><br>
+			<ol>
+				<li>
+					Register a participant
+				</li>
+				<li>
+					Get all participants from a venue
+				</li>
+			</ol>
+			<br><br>
+			<strong>Project Structure provided:</strong>
+			<br><br>
+			<div>
+				<img class="center" style="width:647px; height:623px" src="./img/ArtefactTable.png">
+			</div>
+			<br><br>
+			<ol>
+				<li>
+					<strong>Entity Classes</strong><br>
+					<ol>
+						<li>
+							<strong>com.infy.eventregistration.entity.Event.java</strong>
+							<br>
+							<ul>
+								<li>
+									This class has been partially implemented for you. Annotate this class to declare it as a entity class mapped to the event table with eventId as the primary key
+									<div>
+										<img class="center" style="width:244px; height:303px" src="./img/Event.png">
+									</div>
+								</li>
+							</ul>
+						</li>
+						<br>
+						<li>
+							<strong>com.infy.eventregistration.entity.Participant.java</strong>
+							<br>
+							<ul>
+								<li>
+									This class has been implemented for you. You have to map this class to the <strong>participant</strong> table with <strong>participantId</strong> as the <strong>primary key</strong>
+								</li>
+								<li>
+									Generate the <strong>participantId</strong> using the <strong>IDENTITY</strong> strategy
+									<div>
+										<img class="center" style="width:308px; height:356px" src="./img/Participant.png">
+									</div>
+								</li>
+								<li>
+									There is <strong>Many to One</strong> unidirectional relationship from <strong>Participant</strong> to <strong>Event</strong>
+								</li>
+								<li>
+									In the <strong>participant</strong> table, <strong>event_id</strong> is the foreign key column referencing <strong>event</strong> table
+								</li>
+							</ul>
+						</li>
+					</ol>
+				</li>
+				<br>
+				<li>
+					<strong>Validator Class</strong><br>
+					<strong>com.infy.eventregistration.EventValidator.java</strong>
+					<br>
+					Implement this class according to the class diagram and the description given below:<br>
+					<div>
+						<img class="center" style="width:347px; height:107px" src="./img/EventValidator.png">
+					</div>
+					<br>
+					<strong>Note:</strong> The constructor has been implemented for you
+					<br><br>
+					Method Description:<br><br>
+					<ol>
+						<li>
+							<strong>void validateParticipant(ParticipantDTO participantDTO)</strong>
+							<ul>
+								This method receives an object of ParticipantDTO and calls the respective methods to validate the values and throws an object of EventRegistrationException with the message, based on the violation, as given below,
+								<div>
+									<img class="center" style="width:619px; height:108px" src="./img/EventValidatorTable.png">
+								</div>
+							</ul>
+						</li>
+						<br>
+						<li>
+							<strong>Boolean isValidGender(String gender)</strong>
+							<ul>
+								<li>
+									This method is to validate the <strong>gender</strong> received
+								</li>
+								<li>
+									<strong>gender</strong> should be one among the following, (perform case-sensitive check)
+									<div>
+										<img class="center" style="width:171px; height:140px" src="./img/GenderValidation.png">
+									</div>
+								</li>
+								<li>
+									If the above condition fails return false, else return true
+								</li>
+							</ul>
+						</li>
+						<br>
+						<li>
+							<strong>Boolean isValidRegistrationDate(LocalDate registrationDate)</strong>
+							<ul>
+								<li>
+									This method validates the <strong>registrationDate</strong> received
+								</li>
+								<li>
+									<strong>registrationDate</strong> should not be a past date
+								</li>
+								<li>
+									If the above condition fails return false, else return true
+								</li>
+							</ul>
+						</li>
+					</ol>
+				</li>
+				<br>
+				<li>
+					<strong>Repository</strong><br>
+					<ol>
+						<li>
+							<strong>com.infy.eventregistration.repository.EventRepository.java</strong>
+							<br>
+							<ul>
+								<li>
+									This interface should extend the appropriate repository interface
+								</li>
+								<li>
+									Add the following method to the interface
+									<ul style="list-style-type:disc">
+										<li>
+											The first method should accept the name of the event and return an object with all the details of the corresponding event as <strong>Event</strong>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<br>
+						<li>
+							<strong>com.infy.eventregistration.repository.ParticipantRepository.java</strong>
+							<br>
+							<ul>
+								<li>
+									This interface should extend the appropriate repository interface
+								</li>
+								<li>
+									Add the following two methods to the interface
+									<ul style="list-style-type:disc">
+										<li>
+											The first method should accept a venue and return all the participants participating in the events held in that venue as <strong>List&lt;Participant&gt;</strong>
+										</li>
+										<li>
+											The second method should accept an event object and return all the participants participating in that event as <strong>List&lt;Participant&gt;</strong>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ol>					
+				</li>
+				<br>
+				<li>
+					<strong>Service Class</strong><br>
+					<strong>com.infy.eventregistration.service.EventServiceImpl.java</strong>
+					<br>
+					Implement this class according to the class diagram and the description given below:<br>
+					<div>
+						<img class="center" style="width:381px; height:105px" src="./img/EventServiceImpl.png">
+					</div>
+					<ul>
+						<li>
+							Inject the <strong>EventRepository</strong> and <strong>ParticipantRepository</strong> objects using the proper annotation
+						</li>
+						<li>
+							Mark it with the appropriate stereotype annotation with the value <strong>eventService</strong>
+						</li>
+						<li>
+							Mark this class with necessary annotation to manage transactions
+						</li>
+						<br>
+					</ul>
+					Method Description:<br><br>
+					<ol>
+						<li>
+							<strong>List&lt;ParticipantDTO&gt; getParticipantsByEventVenue(String venue)</strong>
+							<ul>
+								<li>
+									This method is used to get all the participants participating in events held in the given venue
+								</li>
+								<li>
+									Invoke the appropriate method of the ParticipantRepository interface which will return all the participants participating in events held in the given venue
+								</li>
+								<li>
+									If no participant details are available, throw an object of the <strong>EventRegistrationException</strong> with the message <strong>EventService.PARTICIPANTS_UNAVAILABLE</strong> 
+								</li>
+								<li>
+									Else, populate a list, <strong> List&lt;ParticipantDTO&gt;</strong> with all the participant details in the descending order of the registration date and return the sorted list<br>
+									Hint: You can use the prepareDTO() method of the EventDTO and ParticipantDTO classes to convert the respective objects to EventDTO and ParticipantDTO
+								</li>
+							</ul>
+						</li>
+						<br>
+						<li>
+							<strong>ParticipantDTO registerParticipant(ParticipantDTO participantDTO)</strong>
+							<ul>
+								<li>
+									This method is used to register a participant for an event and add the participant details to the database
+								</li>								
+								<li>
+									Invoke the validateParticipant() method of the EventValidator class to validate the object of the ParticipantDTO class
+								</li>
+								<li>
+									Invoke the appropriate method of the EventRepository interface which will returns the object of the event details having the given event name (event name can be found in the EventDTO object of the ParticipantDTO)
+								</li>
+								<li>
+									If event details are not available, throw an object of the <strong>EventRegistrationException</strong> with the message <strong>EventService.EVENT_UNAVAILABLE</strong>
+								</li>
+								<li>
+									Else, invoke the appropriate method of the ParticipantRepository interface which will return all the participants participating in the event obtained in the previous step
+								</li>
+								<li>
+									If the number of participants participating in the event is greater than or equal to the maxCount of the event, throw an object of the <strong>EventRegistrationException</strong> with the message <strong>EventService.REGISTRATION_CLOSED</strong>
+								</li>
+								<li>
+									Else if the registration date of the participant is less than two days prior to the event date, throw an object of the <strong>EventRegistrationException</strong> with the message <strong>EventService.REGISTRATION_CLOSED</strong>
+								</li>
+								<li>
+									Else, create and populate a new object of <strong>Participant</strong> with the appropriate values from the <strong>ParticipantDTO</strong> object (Hint: You can use the prepareEntity() method of the ParticipantDTO class for this)
+								</li>
+								<li>
+									Set the <strong>event</strong> attribute of the Participant object with the Event object obtained from the EventRepository in the former step
+								</li>
+								<li>
+									Then invoke the appropriate method of the ParticipantRepository to add the <strong>Participant</strong> object to the database which will return the same object with the auto-generated <strong>participantId</strong>
+								</li>
+								<li>
+									Set the <strong>participantId</strong> of the <strong>Participant</strong> object obtained in the previous step to the existing <strong>ParticipantDTO</strong> object
+								</li>
+								<li>
+									Then create and populate an <strong>EventDTO</strong> object with the appropriate values from the <strong>Event</strong> object and add the newly created <strong>EventDTO</strong> object to the existing <strong>ParticipantDTO</strong> object (Hint: You can use the prepareDTO() method of the EventDTO class for this)
+								</li>
+								<li>
+									Return the modified <strong>ParticipantDTO</strong> object
+								</li>
+							</ul>
+						</li>
+					</ol>
+				</li>
+				<br>
+				<li>
+					<strong>API Class</strong><br>
+					<strong>com.infy.eventregistration.api.EventAPI.java</strong>
+					<br>
+					Implement this class according to the class diagram and desciption given below:<br>
+					<div>
+						<img class="center" style="width:476px; height:87px" src="./img/EventAPI.png">
+					</div>
+					<ul>
+						<li>
+							Annotate this class with appropriate annotation to declare it as REST controller class
+						</li>
+						<li>
+							Annotate this class with appropriate annotation so that all its methods are mapped with <strong>api</strong> as base URL
+						</li>
+						<li>
+							Annotate this class with appropriate annotation to enable the bean validation support
+						</li>
+						<li>
+							Inject EventService with appropriate annotation
+						</li>
+						<br>
+					</ul>
+					Method Description:<br><br>
+					<ol>
+						<li>
+							<strong>ResponseEntity&lt;List&lt;ParticipantDTO&gt;&gt; getParticipantsByEventVenue (String venue)</strong>
+							<ul>
+								<li>
+									This method is to retrieve all the participants participating in the events held in the given venue
+								</li>
+								<li>
+									It accepts <strong>GET</strong> request with URI <strong>events/{venue}</strong>
+								</li>
+								<li>
+									The path variable venue should be validated as below (use <strong>Bean Validation API</strong> for validation),
+									<ul style="list-style-type:disc">
+										<li>	
+											<strong>venue</strong> should start with an uppercase letter, followed by a number and followed by <strong>-Hall</strong>. If invalid, set <strong>Venue should have an uppercase letter and a single digit number followed by -Hall</strong> as the validation message
+										</li>
+										<strong>Note:</strong> The validation message should not be hard-coded. It should be read from the <strong>ValidationMessages.properties</strong> file
+									</ul>
+								</li>
+								<li>
+									Once validated, invoke the appropriate service class method by passing the venue to get the <strong>List&lt;ParticipantDTO&gt;</strong>
+								</li>
+								<li>
+									Return an object of <strong>ResponseEntity</strong> with the List&lt;ParticipantDTO&gt; object obtained in the previous step as a response and the HTTP response status as <strong>OK</strong>.
+								</li>
+							</ul>
+						</li>
+						<br>
+						<li>
+							<strong>public ResponseEntity&lt;ParticipantDTO&lt; registerParticipant (ParticipantDTO participantDTO)</strong>
+							<ul>
+								<li>
+									This method registers a participant to an event in the EventRegistration application
+								</li>
+								<li>
+									It accepts <strong>POST</strong> request with URI <strong>events</strong>
+								</li>
+								<li>
+									It receives participant details in the form of JSON. The JSON data should be populated in <strong>ParticipantDTO</strong> parameter of this method after successful validation.
+								</li>
+								<li>
+									The participant details will consist of the participant name, participant emailID, gender, registration date and event details. Using <strong>Bean Validation API</strong> validate the details according to the description given below (<strong>Note:</strong> The validation message should not be hard-coded. It should be read from the <strong>ValidationMessages.properties</strong> file),
+									<ul style="list-style-type:disc">
+										<li>
+											<strong>name:</strong><br>
+											If name is not provided then set <strong>Participant name is mandatory</strong> as the validation message<br>
+											If it is provided, it should consist of only one word with letters of the English alphabet. If invalid, set <strong>Participant name should have only one word with only letters</strong> as the validation message
+										</li>
+										<li>
+											<strong>emailId:</strong><br>
+											If emailId is not provided then set <strong>Participant E-Mail ID is mandatory</strong> as the validation message<br>
+											If it is provided, it should start with alphanumeric characters and end with <strong>@infy.com</strong>. If invalid, set <strong>Participant E-Mail ID should start with alphanumeric characters and end with @infy.com</strong> as the validation message
+										</li>
+										<li>
+											<strong>gender:</strong><br>
+											If gender is not provided then set <strong>Participant gender is mandatory</strong> as the validation message<br>
+										</li>
+										<li>
+											<strong>registrationDate:</strong><br>
+											If registrationDate is not provided then set <strong>Registration date is mandatory</strong> as the validation message<br>
+										</li>
+										<li>
+											<strong>eventDTO:</strong><br>
+											If eventDTO is not provided then set <strong>Event is mandatory for registration</strong> as the validation message<br>
+										</li>										
+									</ul>
+								</li>
+								<li>
+									Then invoke the appropriate service class method to register the participant to the event by passing the <strong>ParticipantDTO</strong> object which will return the same object with the <strong>participantId</strong> updated.
+								</li>
+								<li>
+									Return an object of <strong>ResponseEntity</strong> with the ParticipantDTO object obtained in the previous step as the response and  the HTTP response status as <strong>CREATED</strong>.
+								</li>
+							</ul>
+						</li>
+					</ol>
+				</li>
+				<br>
+				<li>
+					<strong>Utility Classes</strong><br>
+					<ol>
+						<li>
+							<strong>com.infy.eventregistration.utility.LoggingAspect.java</strong>
+							<br>
+							Implement the following LoggingAspect class to log all the exceptions from service class using Spring AOP<br>
+							<div>
+								<img class="center" style="width:371px; height:69px" src="./img/LoggingAspect.png">
+							</div>
+							<ul>
+								<li>
+									Annotate this class to declare and use it as an AOP Aspect
+								</li>
+							</ul>
+							<br>
+							Method Description:<br><br>
+							<ol>
+								<li>
+									<strong>void logServiceException(EventRegistrationException exception)</strong>
+									<ul>
+										<li>
+											Annotate this method to declare it as an AfterThrowing advice
+										</li>
+										<li>
+											Log all the exceptions throwns from the <strong>com.infy.eventregistration.service.EventServiceImpl</strong> at error level
+										</li>
+									</ul>
+								</li>
+							</ol>
+						</li>
+						<br>
+						<li>
+							<strong>com.infy.eventregistration.utility.ExceptionControllerAdvice.java</strong>
+							<br>
+							Annotate the following ExceptionControllerAdvice to log and handle all the exceptions of the API class,<br>
+							<div>
+								<img class="center" style="width:570px; height:123px" src="./img/ExceptionControllerAdvice.png">
+							</div>
+							<ul>
+								<li>
+									Inject Environment objects using appropriate annotation
+								</li>
+								<li>
+									The body of the methods have been implemented for you
+								</li>
+							</ul>
+							<br>
+							Method Description:<br><br>
+							<ol>
+								<li>
+									<strong>ResponseEntity&lt;ErrorInfo&gt; eventRegistrationExceptionHandler(EventRegistrationException exception)</strong>
+									<ul>
+										<li>
+											This method is for handling <strong>EventRegistrationException</strong> exception
+										</li>
+										<li>
+											Add appropriate annotation to make this method as exception handler for the EventRegistrationException
+										</li>
+									</ul>
+								</li>
+								<br>
+								<li>
+									<strong>ResponseEntity&lt;ErrorInfo&gt; generalExceptionHandler(Exception exception)</strong>
+									<ul>
+										<li>
+											This method is for handling general exceptions
+										</li>
+										<li>
+											Add appropriate annotation to make this method as exception handler for any type of exceptions
+										</li>
+									</ul>
+								</li>
+								<br>
+								<li>
+									<strong>ResponseEntity&lt;ErrorInfo&gt; validatorExceptionHandler(Exception exception)</strong>
+									<ul>
+										<li>
+											This method is for handling <strong>MethodArgumentNotValidException</strong> and <strong>ConstraintViolationException</strong> exceptions
+										</li>
+										<li>
+											Add appropriate annotation to make this method as exception handler method for <strong>MethodArgumentNotValidException</strong> and <strong>ConstraintViolationException</strong> exceptions
+										</li>
+									</ul>
+								</li>
+							</ol>
+						</li>
+					</ol>
+				</li>				
+				<br>
+				<li>
+					<strong>Test Class</strong><br>
+					<strong>com.infy.eventregistration.EventRegistrationApplicationTests.java</strong>
+					<br>
+					Implement this class to test the methods of EventServiceImpl class using JUnit 5 and Mockito as per the class diagram given below,<br>
+					<div>
+						<img class="center" style="width:355px; height:123px" src="./img/EventRegistrationApplicationTests.png">
+					</div>
+					<ul>
+						<li>
+							Annotate this test class to execute Spring Boot based test
+						</li>
+						<li>
+							Dependencies should be appropriately mocked using Mockito
+						</li>
+						<li>
+							Annotate the methods with appropriate annotation to mark them as JUnit 5 test cases
+						</li>
+					</ul>
+					<br>
+					Method Description:
+					<ol>
+						<li>
+							<strong>getParticipantsByEventVenueNoParticipantsFoundTest()</strong><br>
+							<ul>
+								<li>
+									This test case is to test for the exception when there are no participants for a given venue
+								</li>
+								<li>
+									Take any appropriate value for the venue to result in this exception being thrown
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong>registerParticipantNoEventFoundTest()</strong><br>
+							<ul>
+								<li>
+									This test case is to test for the exception when the the event to which the participant has to be registered is not available
+								</li>
+								<li>
+									Take appropriate values for the event name and the rest of the participant attributes to result in this exception being thrown
+								</li>
+							</ul>
+						</li>
+					</ol>
+				</li>
+			</ol>
+			<br>
+			<br>
+			Please find in the table below sample input and output for REST end points.<br>
+			<strong>Note:</strong> The date values have been used considering the present date (today) to be 16th July, 2020
+			<table class="uk-table uk-table-responsive" border="1" style="width:100%">
+				<thead>
+					<tr style="font-size:18px">
+						<td style="text-align:center; font-weight: bold; width:10%">REST end point</td>
+						<td style="text-align:center; font-weight: bold; width:10%">Request Type(valid/invalid)</td>
+						<td style="text-align:center; font-weight: bold; width:40%">End point URI with sample input</td>
+						<td style="text-align:center; font-weight: bold; width:40%">Sample Response</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="vertical-align:top" rowspan="3">
+							Get all the participants of the venue
+						</td>
+						<td>
+							Valid test data
+						</td>
+						<td>
+							api/events/C4-Hall
+						</td>
+						<td>
+							[<br>
+							&emsp;{<br>
+							&emsp;&emsp;"participantId": 1002,<br>
+							&emsp;&emsp;"name": "Sarah",<br>
+							&emsp;&emsp;"emailId": "sarah@infy.com",<br>
+							&emsp;&emsp;"gender": "Female",<br>
+							&emsp;&emsp;"registrationDate": "2020-07-14",<br>
+							&emsp;&emsp;"eventDTO": {<br>
+							&emsp;&emsp;&emsp;&emsp;"eventId": 103,<br>
+							&emsp;&emsp;&emsp;&emsp;"name": "Essay Writing",<br>
+							&emsp;&emsp;&emsp;&emsp;"eventDate": "2020-07-17",<br>
+							&emsp;&emsp;&emsp;&emsp;"venue": "C4-Hall",<br>
+							&emsp;&emsp;&emsp;&emsp;"maxCount": 3<br>
+							&emsp;&emsp;}<br>
+							&emsp;},<br>
+							&emsp;{<br>
+							&emsp;&emsp;"participantId": 1005,<br>
+							&emsp;&emsp;"name": "Mike",<br>
+							&emsp;&emsp;"emailId": "mike1@infy.com",<br>
+							&emsp;&emsp;"gender": "Others",<br>
+							&emsp;&emsp;"registrationDate": "2020-07-13",<br>
+							&emsp;&emsp;"eventDTO": {<br>
+							&emsp;&emsp;&emsp;&emsp;"eventId": 105,<br>
+							&emsp;&emsp;&emsp;&emsp;"name": "Ethical Hacking",<br>
+							&emsp;&emsp;&emsp;&emsp;"eventDate": "2020-07-19",<br>
+							&emsp;&emsp;&emsp;&emsp;"venue": "C4-Hall",<br>
+							&emsp;&emsp;&emsp;&emsp;"maxCount": 4<br>
+							&emsp;&emsp;}<br>
+							&emsp;}<br>
+							]<br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Invalid test data 1
+						</td>
+						<td>
+							api/events/Hall
+						</td>
+						<td>
+							{<br>
+							&emsp;&emsp;"errorMessage": "Venue should have an uppercase letter and a single digit number followed by -Hall",<br>
+							&emsp;&emsp;"errorCode": 400<br>
+							}<br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Invalid test data 2
+						</td>
+						<td>
+							api/events/Z7-Hall
+						</td>
+						<td>
+							{<br>
+							&emsp;&emsp;"errorMessage": "Participants not available for the venue",<br>
+							&emsp;&emsp;"errorCode": 400<br>
+							}<br>
+						</td>
+					</tr>
+					<tr>
+						<td style="vertical-align:top" rowspan="7">
+							Register a participant to an event
+						</td>
+						<td>
+							Valid test data
+						</td>
+						<td>
+							api/events<br><br>
+							Sample JSON:<br>
+							{<br>
+							&emsp;"name": "Jill",<br>
+							&emsp;"emailId": "J123@infy.com",<br>
+							&emsp;"gender": "Female",<br>
+							&emsp;"registrationDate": "2020-07-16",<br>
+							&emsp;"eventDTO": {<br>
+							&emsp;&emsp;&emsp;"name": "Ethical Hacking",<br>
+							&emsp;}<br>
+							}<br>
+						</td>
+						<td>
+							{<br>
+							&emsp;"participantId": 1011,<br>
+							&emsp;"name": "Jill",<br>
+							&emsp;"emailId": "J123@infy.com",<br>
+							&emsp;"gender": "Female",<br>
+							&emsp;"registrationDate": "2020-07-16",<br>
+							&emsp;"eventDTO": {<br>
+							&emsp;&emsp;&emsp;"eventId": 105,<br>
+							&emsp;&emsp;&emsp;"name": "Ethical Hacking",<br>
+							&emsp;&emsp;&emsp;"eventDate": "2020-07-19",<br>
+							&emsp;&emsp;&emsp;"venue": "C4-Hall",<br>
+							&emsp;&emsp;&emsp;"maxCount": 4<br>
+							&emsp;}<br>
+							}<br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Invalid test data 1
+						</td>
+						<td>
+							api/events<br><br>
+							Sample JSON:<br>
+							{<br>
+							&emsp;"emailId": "J123@infy.com",<br>
+							&emsp;"gender": "Female",<br>
+							&emsp;"registrationDate": "2020-07-16"<br>
+							}<br>
+						</td>
+						<td>
+							{<br>
+							&emsp;&emsp;"errorMessage": "Participant name is mandatory, Event is mandatory for registration",<br>
+							&emsp;&emsp;"errorCode": 400<br>
+							}<br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Invalid test data 2
+						</td>
+						<td>
+							api/events<br><br>
+							Sample JSON:<br>
+							{<br>
+							&emsp;"name": "Jill",<br>
+							&emsp;"emailId": "J123@infy.com",<br>
+							&emsp;"gender": "female",<br>
+							&emsp;"registrationDate": "2020-07-16",<br>
+							&emsp;"eventDTO": {<br>
+							&emsp;&emsp;&emsp;"name": "Ethical Hacking",<br>
+							&emsp;}<br>
+							}<br>
+						</td>
+						<td>
+							{<br>
+							&emsp;&emsp;"errorMessage": "Participant gender should be one among Male, Female or Others",<br>
+							&emsp;&emsp;"errorCode": 400<br>
+							}<br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Invalid test data 3
+						</td>
+						<td>
+							api/events<br><br>
+							Sample JSON:<br>
+							{<br>
+							&emsp;"name": "Jill",<br>
+							&emsp;"emailId": "J123@infy.com",<br>
+							&emsp;"gender": "Female",<br>
+							&emsp;"registrationDate": "2020-07-15",<br>
+							&emsp;"eventDTO": {<br>
+							&emsp;&emsp;&emsp;"name": "Ethical Hacking",<br>
+							&emsp;}<br>
+							}<br>
+						</td>
+						<td>
+							{<br>
+							&emsp;&emsp;"errorMessage": "Registration date cannot be a past date",<br>
+							&emsp;&emsp;"errorCode": 400<br>
+							}<br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Invalid test data 4
+						</td>
+						<td>
+							api/events<br><br>
+							Sample JSON:<br>
+							{<br>
+							&emsp;"name": "Jill",<br>
+							&emsp;"emailId": "J123@infy.com",<br>
+							&emsp;"gender": "Female",<br>
+							&emsp;"registrationDate": "2020-07-16",<br>
+							&emsp;"eventDTO": {<br>
+							&emsp;&emsp;&emsp;"name": "Mono Acting",<br>
+							&emsp;}<br>
+							}<br>
+						</td>
+						<td>
+							{<br>
+							&emsp;&emsp;"errorMessage": "Event not available for registration",<br>
+							&emsp;&emsp;"errorCode": 400<br>
+							}<br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Invalid test data 5
+						</td>
+						<td>
+							api/events<br><br>
+							Sample JSON:<br>
+							{<br>
+							&emsp;"name": "Jill",<br>
+							&emsp;"emailId": "J123@infy.com",<br>
+							&emsp;"gender": "Female",<br>
+							&emsp;"registrationDate": "2020-07-16",<br>
+							&emsp;"eventDTO": {<br>
+							&emsp;&emsp;&emsp;"name": "Public Speaking",<br>
+							&emsp;}<br>
+							}<br>
+						</td>
+						<td>
+							{<br>
+							&emsp;&emsp;"errorMessage": "Registration is closed for the event",<br>
+							&emsp;&emsp;"errorCode": 400<br>
+							}<br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Invalid test data 6
+						</td>
+						<td>
+							api/events<br><br>
+							Sample JSON:<br>
+							{<br>
+							&emsp;"name": "Jill",<br>
+							&emsp;"emailId": "J123@infy.com",<br>
+							&emsp;"gender": "Female",<br>
+							&emsp;"registrationDate": "2020-07-16",<br>
+							&emsp;"eventDTO": {<br>
+							&emsp;&emsp;&emsp;"name": "Essay Writing",<br>
+							&emsp;}<br>
+							}<br>
+						</td>
+						<td>
+							{<br>
+							&emsp;&emsp;"errorMessage": "Registration is closed for the event",<br>
+							&emsp;&emsp;"errorCode": 400<br>
+							}<br>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+            <br />
+            <div align="center">
+                <button class="uk-button uk-button-primary uk-button-small"
+                    onclick="showInstructions();">Prev</button>&nbsp;&nbsp;&nbsp;
+            </div>
+            <br>
+        </div>
+        
+	</div>
+
+
+	
+</body>
+<script src="./js/new.js" rel="text/javascript"></script>
+<script>showWelcome();</script>
+
+</html>

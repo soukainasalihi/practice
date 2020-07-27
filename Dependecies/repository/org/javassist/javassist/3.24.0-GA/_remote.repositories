@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Jul 23 16:57:59 IST 2020
+javassist-3.24.0-GA.jar>nexus=
+javassist-3.24.0-GA-sources.jar>nexus=
+javassist-3.24.0-GA.pom>nexus=

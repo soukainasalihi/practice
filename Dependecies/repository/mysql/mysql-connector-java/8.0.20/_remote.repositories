@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Jul 23 16:59:42 IST 2020
+mysql-connector-java-8.0.20.pom>nexus=
+mysql-connector-java-8.0.20-sources.jar>nexus=
+mysql-connector-java-8.0.20.jar>nexus=

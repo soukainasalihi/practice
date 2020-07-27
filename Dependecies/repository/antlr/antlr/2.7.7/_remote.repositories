@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Jul 23 16:58:56 IST 2020
+antlr-2.7.7-sources.jar>nexus=
+antlr-2.7.7.pom>nexus=
+antlr-2.7.7.jar>nexus=

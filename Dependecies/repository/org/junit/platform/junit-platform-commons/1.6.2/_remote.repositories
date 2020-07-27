@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Jul 23 17:00:17 IST 2020
+junit-platform-commons-1.6.2.pom>nexus=
+junit-platform-commons-1.6.2-sources.jar>nexus=
+junit-platform-commons-1.6.2.jar>nexus=

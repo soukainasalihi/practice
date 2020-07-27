@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Jul 23 17:00:26 IST 2020
+ibatis-core-3.0.jar>nexus=
+ibatis-core-3.0.pom>nexus=
+ibatis-core-3.0-sources.jar>nexus=
