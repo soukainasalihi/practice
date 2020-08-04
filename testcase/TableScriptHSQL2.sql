@@ -1,1 +1,2 @@
-drop table meeting; 
+drop table participant cascade;
+drop table event cascade;
