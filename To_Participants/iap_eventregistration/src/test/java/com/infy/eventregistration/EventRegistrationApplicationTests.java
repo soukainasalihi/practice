@@ -1,7 +1,5 @@
 package com.infy.eventregistration;
 
-import org.junit.jupiter.api.Test;
-
 import com.infy.eventregistration.repository.EventRepository;
 import com.infy.eventregistration.repository.ParticipantRepository;
 import com.infy.eventregistration.service.EventService;
@@ -19,8 +17,4 @@ public class EventRegistrationApplicationTests {
 		
 	}
 	
-	@Test
-	public void registerParticipantNoEventFoundTest() {
-		
-	}
 }

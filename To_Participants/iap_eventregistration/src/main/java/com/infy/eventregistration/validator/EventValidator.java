@@ -7,7 +7,7 @@ import com.infy.eventregistration.exception.EventRegistrationException;
 
 public class EventValidator {
 	private EventValidator() {
-		
+
 	}
 	
 	public static void validateParticipant(ParticipantDTO participantDTO) throws EventRegistrationException {

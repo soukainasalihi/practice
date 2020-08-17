@@ -185,7 +185,7 @@
 			<strong>Project Structure provided:</strong>
 			<br><br>
 			<div>
-				<img class="center" style="width:647px; height:623px" src="./img/ArtefactTable.png">
+				<img class="center" style="width:647px; height:594px" src="./img/ArtifactTable.png">
 			</div>
 			<br><br>
 			<ol>
@@ -492,19 +492,6 @@
 											If it is provided, it should consist of only one word with letters of the English alphabet. If invalid, set <strong>Participant name should have only one word with only letters</strong> as the validation message
 										</li>
 										<li>
-											<strong>emailId:</strong><br>
-											If emailId is not provided then set <strong>Participant E-Mail ID is mandatory</strong> as the validation message<br>
-											If it is provided, it should start with alphanumeric characters and end with <strong>@infy.com</strong>. If invalid, set <strong>Participant E-Mail ID should start with alphanumeric characters and end with @infy.com</strong> as the validation message
-										</li>
-										<li>
-											<strong>gender:</strong><br>
-											If gender is not provided then set <strong>Participant gender is mandatory</strong> as the validation message<br>
-										</li>
-										<li>
-											<strong>registrationDate:</strong><br>
-											If registrationDate is not provided then set <strong>Registration date is mandatory</strong> as the validation message<br>
-										</li>
-										<li>
 											<strong>eventDTO:</strong><br>
 											If eventDTO is not provided then set <strong>Event is mandatory for registration</strong> as the validation message<br>
 										</li>										
@@ -522,91 +509,58 @@
 				</li>
 				<br>
 				<li>
-					<strong>Utility Classes</strong><br>
+					<strong>Utility Class</strong><br>					
+					<strong>com.infy.eventregistration.utility.ExceptionControllerAdvice.java</strong>
+					<br>
+					Annotate the following ExceptionControllerAdvice to log and handle all the exceptions of the API class,<br>
+					<div>
+						<img class="center" style="width:570px; height:123px" src="./img/ExceptionControllerAdvice.png">
+					</div>
+					<ul>
+						<li>
+							Inject Environment objects using appropriate annotation
+						</li>
+						<li>
+							The body of the methods have been implemented for you
+						</li>
+					</ul>
+					<br>
+					Method Description:<br><br>
 					<ol>
 						<li>
-							<strong>com.infy.eventregistration.utility.LoggingAspect.java</strong>
-							<br>
-							Implement the following LoggingAspect class to log all the exceptions from service class using Spring AOP<br>
-							<div>
-								<img class="center" style="width:371px; height:69px" src="./img/LoggingAspect.png">
-							</div>
+							<strong>ResponseEntity&lt;ErrorInfo&gt; eventRegistrationExceptionHandler(EventRegistrationException exception)</strong>
 							<ul>
 								<li>
-									Annotate this class to declare and use it as an AOP Aspect
+									This method is for handling <strong>EventRegistrationException</strong> exception
+								</li>
+								<li>
+									Add appropriate annotation to make this method as exception handler for the EventRegistrationException
 								</li>
 							</ul>
-							<br>
-							Method Description:<br><br>
-							<ol>
-								<li>
-									<strong>void logServiceException(EventRegistrationException exception)</strong>
-									<ul>
-										<li>
-											Annotate this method to declare it as an AfterThrowing advice
-										</li>
-										<li>
-											Log all the exceptions throwns from the <strong>com.infy.eventregistration.service.EventServiceImpl</strong> at error level
-										</li>
-									</ul>
-								</li>
-							</ol>
 						</li>
 						<br>
 						<li>
-							<strong>com.infy.eventregistration.utility.ExceptionControllerAdvice.java</strong>
-							<br>
-							Annotate the following ExceptionControllerAdvice to log and handle all the exceptions of the API class,<br>
-							<div>
-								<img class="center" style="width:570px; height:123px" src="./img/ExceptionControllerAdvice.png">
-							</div>
+							<strong>ResponseEntity&lt;ErrorInfo&gt; generalExceptionHandler(Exception exception)</strong>
 							<ul>
 								<li>
-									Inject Environment objects using appropriate annotation
+									This method is for handling general exceptions
 								</li>
 								<li>
-									The body of the methods have been implemented for you
+									Add appropriate annotation to make this method as exception handler for any type of exceptions
 								</li>
 							</ul>
-							<br>
-							Method Description:<br><br>
-							<ol>
+						</li>
+						<br>
+						<li>
+							<strong>ResponseEntity&lt;ErrorInfo&gt; validatorExceptionHandler(Exception exception)</strong>
+							<ul>
 								<li>
-									<strong>ResponseEntity&lt;ErrorInfo&gt; eventRegistrationExceptionHandler(EventRegistrationException exception)</strong>
-									<ul>
-										<li>
-											This method is for handling <strong>EventRegistrationException</strong> exception
-										</li>
-										<li>
-											Add appropriate annotation to make this method as exception handler for the EventRegistrationException
-										</li>
-									</ul>
+									This method is for handling <strong>MethodArgumentNotValidException</strong> and <strong>ConstraintViolationException</strong> exceptions
 								</li>
-								<br>
 								<li>
-									<strong>ResponseEntity&lt;ErrorInfo&gt; generalExceptionHandler(Exception exception)</strong>
-									<ul>
-										<li>
-											This method is for handling general exceptions
-										</li>
-										<li>
-											Add appropriate annotation to make this method as exception handler for any type of exceptions
-										</li>
-									</ul>
+									Add appropriate annotation to make this method as exception handler method for <strong>MethodArgumentNotValidException</strong> and <strong>ConstraintViolationException</strong> exceptions
 								</li>
-								<br>
-								<li>
-									<strong>ResponseEntity&lt;ErrorInfo&gt; validatorExceptionHandler(Exception exception)</strong>
-									<ul>
-										<li>
-											This method is for handling <strong>MethodArgumentNotValidException</strong> and <strong>ConstraintViolationException</strong> exceptions
-										</li>
-										<li>
-											Add appropriate annotation to make this method as exception handler method for <strong>MethodArgumentNotValidException</strong> and <strong>ConstraintViolationException</strong> exceptions
-										</li>
-									</ul>
-								</li>
-							</ol>
+							</ul>
 						</li>
 					</ol>
 				</li>				
@@ -617,7 +571,7 @@
 					<br>
 					Implement this class to test the methods of EventServiceImpl class using JUnit 5 and Mockito as per the class diagram given below,<br>
 					<div>
-						<img class="center" style="width:355px; height:123px" src="./img/EventRegistrationApplicationTests.png">
+						<img class="center" style="width:355px; height:123px" src="./img/EventRegistrationApplicationTests.png"> 
 					</div>
 					<ul>
 						<li>
@@ -641,17 +595,6 @@
 								</li>
 								<li>
 									Take any appropriate value for the venue to result in this exception being thrown
-								</li>
-							</ul>
-						</li>
-						<li>
-							<strong>registerParticipantNoEventFoundTest()</strong><br>
-							<ul>
-								<li>
-									This test case is to test for the exception when the the event to which the participant has to be registered is not available
-								</li>
-								<li>
-									Take appropriate values for the event name and the rest of the participant attributes to result in this exception being thrown
 								</li>
 							</ul>
 						</li>
