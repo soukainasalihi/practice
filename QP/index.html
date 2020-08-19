@@ -66,7 +66,7 @@
 				</li>
 				<br>
 				<li>
-					Two buttons, ‘Execute’ and ‘View Result’, are given in the environment. Click on ‘Execute’ when you want to test your solution and see the test report. Click on ‘View Result’ to see the test report of the latest execution.
+					Two buttons, ‘Execute’ and ‘View Result’, are given in the environment. Click on ‘Execute’ when you want to test your solution and see the test report. <strong>You can also see the test analysis report on the desktop of VM.</strong> Click on ‘View Result’ to see the test report of the latest execution.
 				</li>
 				<br>
 				<li>
@@ -132,6 +132,10 @@
 
                 </li>
 				<br>
+				<li>
+					Make sure to implement the <strong>Entity</strong> and <strong>DTO</strong> class(es) properly. Any mistake in these classes might affect the execution of the other classes of the project which might further result in <strong>deduction of marks</strong>
+                </li>
+				<br>
                 <li>
 					You need to run the project as <strong>Run As Java Application</strong> as it is boot project
                 </li>
@@ -185,7 +189,7 @@
 			<strong>Project Structure provided:</strong>
 			<br><br>
 			<div>
-				<img class="center" style="width:647px; height:594px" src="./img/ArtifactTable.PNG">
+				<img class="center" style="width:647px; height:594px" src="./img/ArtifactTable.png">
 			</div>
 			<br><br>
 			<ol>
@@ -197,7 +201,7 @@
 							<br>
 							<ul>
 								<li>
-									This class has been partially implemented for you. Annotate this class to declare it as a entity class mapped to the <strong>event</strong> table with <strong>eventId</strong> as the <strong>primary key</strong>
+									This class has been partially implemented for you. Annotate this class to declare it as a entity class mapped to the event table with eventId as the primary key
 									<div>
 										<img class="center" style="width:244px; height:303px" src="./img/Event.png">
 									</div>
@@ -301,7 +305,12 @@
 									Add the following method to the interface
 									<ul style="list-style-type:disc">
 										<li>
-											The first method should accept the name of the event and return an object with all the details of the corresponding event as <strong>Event</strong>
+											This method should accept the name of the event and return an object with all the details of the corresponding event as <strong>Event</strong>.
+											<ul>
+												<li>
+													Use <strong>Query Creation based on method name approach</strong> for this method
+												</li>
+											</ul>
 										</li>
 									</ul>
 								</li>
@@ -316,13 +325,29 @@
 									This interface should extend the appropriate repository interface
 								</li>
 								<li>
-									Add the following two methods to the interface
+									Add/modify the following two methods to the interface
 									<ul style="list-style-type:disc">
 										<li>
 											The first method should accept a venue and return all the participants participating in the events held in that venue as <strong>List&lt;Participant&gt;</strong>
+											<ul>
+												<li>
+													The signature of this method is already provided to you as follows: <br>
+													<ul>
+														<strong>List&lt;Participant&gt; getParticipantsByEventVenue(String venue);</strong>
+													</ul>
+												</li>
+												<li>
+													Mark this method with appopriate annotation to implement its functionality using the <strong>JPQL query</strong>
+												</li>
+											</ul>
 										</li>
 										<li>
 											The second method should accept an event object and return all the participants participating in that event as <strong>List&lt;Participant&gt;</strong>
+											<ul>
+												<li>
+													Use <strong>Query Creation based on method name approach</strong> for this method
+												</li>
+											</ul>
 										</li>
 									</ul>
 								</li>
@@ -509,58 +534,62 @@
 				</li>
 				<br>
 				<li>
-					<strong>Utility Class</strong><br>					
-					<strong>com.infy.eventregistration.utility.ExceptionControllerAdvice.java</strong>
-					<br>
-					Annotate the following ExceptionControllerAdvice to log and handle all the exceptions of the API class,<br>
-					<div>
-						<img class="center" style="width:570px; height:123px" src="./img/ExceptionControllerAdvice.png">
-					</div>
-					<ul>
-						<li>
-							Inject Environment objects using appropriate annotation
-						</li>
-						<li>
-							The body of the methods have been implemented for you
-						</li>
-					</ul>
-					<br>
-					Method Description:<br><br>
+					<strong>Utility Classes</strong><br>
 					<ol>
 						<li>
-							<strong>ResponseEntity&lt;ErrorInfo&gt; eventRegistrationExceptionHandler(EventRegistrationException exception)</strong>
+							<strong>com.infy.eventregistration.utility.ExceptionControllerAdvice.java</strong>
+							<br>
+							Annotate the following ExceptionControllerAdvice to log and handle all the exceptions of the API class,<br>
+							<div>
+								<img class="center" style="width:570px; height:123px" src="./img/ExceptionControllerAdvice.png">
+							</div>
 							<ul>
 								<li>
-									This method is for handling <strong>EventRegistrationException</strong> exception
+									Inject Environment objects using appropriate annotation
 								</li>
 								<li>
-									Add appropriate annotation to make this method as exception handler for the EventRegistrationException
+									The body of the methods have been implemented for you
 								</li>
 							</ul>
-						</li>
-						<br>
-						<li>
-							<strong>ResponseEntity&lt;ErrorInfo&gt; generalExceptionHandler(Exception exception)</strong>
-							<ul>
+							<br>
+							Method Description:<br><br>
+							<ol>
 								<li>
-									This method is for handling general exceptions
+									<strong>ResponseEntity&lt;ErrorInfo&gt; eventRegistrationExceptionHandler(EventRegistrationException exception)</strong>
+									<ul>
+										<li>
+											This method is for handling <strong>EventRegistrationException</strong> exception
+										</li>
+										<li>
+											Add appropriate annotation to make this method as exception handler for the EventRegistrationException
+										</li>
+									</ul>
 								</li>
+								<br>
 								<li>
-									Add appropriate annotation to make this method as exception handler for any type of exceptions
+									<strong>ResponseEntity&lt;ErrorInfo&gt; generalExceptionHandler(Exception exception)</strong>
+									<ul>
+										<li>
+											This method is for handling general exceptions
+										</li>
+										<li>
+											Add appropriate annotation to make this method as exception handler for any type of exceptions
+										</li>
+									</ul>
 								</li>
-							</ul>
-						</li>
-						<br>
-						<li>
-							<strong>ResponseEntity&lt;ErrorInfo&gt; validatorExceptionHandler(Exception exception)</strong>
-							<ul>
+								<br>
 								<li>
-									This method is for handling <strong>MethodArgumentNotValidException</strong> and <strong>ConstraintViolationException</strong> exceptions
+									<strong>ResponseEntity&lt;ErrorInfo&gt; validatorExceptionHandler(Exception exception)</strong>
+									<ul>
+										<li>
+											This method is for handling <strong>MethodArgumentNotValidException</strong> and <strong>ConstraintViolationException</strong> exceptions
+										</li>
+										<li>
+											Add appropriate annotation to make this method as exception handler method for <strong>MethodArgumentNotValidException</strong> and <strong>ConstraintViolationException</strong> exceptions
+										</li>
+									</ul>
 								</li>
-								<li>
-									Add appropriate annotation to make this method as exception handler method for <strong>MethodArgumentNotValidException</strong> and <strong>ConstraintViolationException</strong> exceptions
-								</li>
-							</ul>
+							</ol>
 						</li>
 					</ol>
 				</li>				
