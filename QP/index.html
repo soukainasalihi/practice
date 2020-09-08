@@ -234,6 +234,27 @@
 				</li>
 				<br>
 				<li>
+					<strong>DTO Class</strong><br>
+					<ol>
+						<li>
+							<strong>com.infy.meetingscheduler.dto.ParticipantDTO.java</strong>
+							<br>
+							This is a DTO (Data Transfer Object) class that holds participant details such as participant id, participant name, participant emailID, gender, date of registration and the event details.
+							<ul>
+								<li>
+									Use appropriate annotations from the Java Bean Validation API for validating participant name and event details attributes of this class. (Refer below registerParticipant() method of EventAPI for validation rules).
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong>com.infy.meetingscheduler.dto.EventDTO.java</strong>
+							<br>
+							This is a DTO (Data Transfer Object) class that holds participant details such as event id, event name, event date, event venue and maximum participant count.
+						</li>
+					</ol>
+				</li>
+				<br>
+				<li>
 					<strong>Validator Class</strong><br>
 					<strong>com.infy.eventregistration.EventValidator.java</strong>
 					<br>
@@ -497,7 +518,7 @@
 						</li>
 						<br>
 						<li>
-							<strong>public ResponseEntity&lt;ParticipantDTO&lt; registerParticipant (ParticipantDTO participantDTO)</strong>
+							<strong>public ResponseEntity&lt;ParticipantDTO&gt; registerParticipant (ParticipantDTO participantDTO)</strong>
 							<ul>
 								<li>
 									This method registers a participant to an event in the EventRegistration application
